@@ -1,8 +1,9 @@
 #include<iostream>
-#include<sstream>
-#include<vector>
-#include <bits/stdc++.h> 
-void permute(std::vector<int> &nums,int s,int l );
+#include<sstream>   // to work with an array has whitespace
+#include<vector>    // 
+#include <bits/stdc++.h> // to use swap
+#include<set>   //To remove duplicate permutations
+void permute(std::vector<int> &nums,int s,int l,std::set<std::vector<int>> &permutation );
 int main(){
     std::string m;
     int l;
@@ -18,29 +19,37 @@ int main(){
     while (ss >> num){
         nums.push_back(num);
     }
-    permute(nums,0,l);
+    std::set<std::vector<int>> permutation;
+    permute(nums,0,l,permutation);
 
     return 0;
 }
-void permute(std::vector<int> &nums,int s,int l ){
+void permute(std::vector<int> &nums,int s,int l,std::set<std::vector<int>> &permutation ){
     if(s==l){
-    for(int j=0;j<l;j++){
-        std::cout<<nums[j]<<' ';
+        if (permutation.find(nums) == permutation.end()) {
+            permutation.insert(nums);
+
+            for(int j=0;j<l;j++){
+        
+                std::cout<<nums[j]<<' ';
+            }
+            std::cout << std::endl;
         }
-        std::cout << std::endl;
-    }
+    }    
     else{
         for(int i=s;i<l;i++){
             std::swap(nums[s],nums[i]);
-            permute(nums,s+1,l);
-            std::swap(nums[s],nums[i]);
+            permute(nums,s+1,l,permutation);
+            std::swap(nums[s],nums[i]);  // backtrack
 
         }
     }
+}
+
 
     
 
 
 
-}
+
 
