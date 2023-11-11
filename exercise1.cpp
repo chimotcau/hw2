@@ -1,6 +1,6 @@
 #include<iostream>
 #include<sstream>   // to work with an array has whitespace
-#include<vector>    // 
+#include<vector>    // to work with an array has whitespace
 #include <bits/stdc++.h> // to use swap
 #include<set>   //To remove duplicate permutations
 void permute(std::vector<int> &nums,int s,int l,std::set<std::vector<int>> &permutation );
