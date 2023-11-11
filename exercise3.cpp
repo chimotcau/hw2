@@ -42,8 +42,7 @@ int main(){
     int *index= new int[n];
     for(int i=0;i<n;i++){
         a[i]= sqrt(coor[i][0]*coor[i][0]+coor[i][1]*coor[i][1]); 
-        index[i] = i;
-        std::cout<<a[i]<<'\n';      
+        index[i] = i;     
     }
     bubbleSort(a, index, n);
     for (int i = 0; i < k; ++i) {
