@@ -8,7 +8,7 @@ int main(){
     return 0;
 }
 bool overlap(int x1,int y1,int x2,int y2, int X1, int Y1, int X2, int Y2){
-    if((Y1>=y2) || (X1>=x2) || (y1>=Y2) || (x1>=X2) ){
+    if((Y1>=y2) || (X1>=x2) || (y1>=Y2) || (x1>=X2) ){         // the condition to satisfy the task
         std::cout<<"2 shapes are not overlaping";
         
     }

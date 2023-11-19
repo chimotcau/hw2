@@ -13,7 +13,7 @@ int main(){
     std::cin>>l;
     std::cin.ignore();
     std::cout<<"enter the sequence ";
-    std::getline(std::cin >>std ::ws,m);   // to add number with whitespace if before we got int
+    std::getline(std::cin >>std ::ws,m);   // to add number with whitespace if we got int before it
     std::stringstream ss(m);
     std::vector<int> nums;
     while (ss >> num){
